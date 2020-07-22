@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import { formatMessage } from 'umi/locale';
 import { List, Modal, Icon } from 'antd-mobile';
-import { ADDRESS_CHOSE, ADDRESS_DISABLED, ADDRESS_FREE } from '@/pages/WorkSpace/utils/constant';
 import styles from './PositionSelect.less';
+
+// 位置选择组件颜色
+export const ADDRESS_CHOSE = '#1B84FF'; // 位置选择
+export const ADDRESS_FREE = '#fff'; // 位置未选择
+export const ADDRESS_DISABLED = '#9F9F9F'; // 位置置灰
 
 const { Item } = List;
 
-const PositionSelect = ({ spaceTree, showPositionSelect, onClose, title, selectTip, onChange, defaultValue }) => {
+const PositionSelect = ({ spaceTree, showPositionSelect, onClose, title, selectTip, onChange, defaultValue, selectColor }) => {
 
   const [choseList, setChoseList] = useState([]);
   const [selectList, setSelectList] = useState(undefined);
@@ -19,16 +22,39 @@ const PositionSelect = ({ spaceTree, showPositionSelect, onClose, title, selectT
    *  处理初始化数据
    */
   useEffect(() => {
+    if(spaceTree.length===0){
+      return;
+    }
     let data = spaceTree;
     for (let i = 0; i < defaultValue.length; i++) {
       const tmp = defaultValue[i];
       const parent = data.find(v => v.id === tmp.parentId);
-      childrenMap[tmp.parentId] = parent;
-      data = parent.children;
+      if(!parent && tmp.parentId===0){
+        childrenMap[tmp.parentId] = data;
+      }else {
+        childrenMap[tmp.parentId] = parent.children;
+        data = parent.children;
+      }
+      if (i === (defaultValue.length - 1)) {
+        setSelectItem(tmp);
+        setSelectList(parent.children);
+      }
     }
     setChildrenMap(childrenMap);
     setChoseList(defaultValue);
-  }, [defaultValue]);
+  }, [defaultValue,spaceTree]);
+
+  /**
+   *  处理初始化数据
+   */
+  useEffect(() => {
+    if(!showPositionSelect) {
+      setChoseList([]) ;
+      setSelectList(undefined);
+      setChildrenMap({});
+      setSelectItem(undefined);
+    }
+  }, [showPositionSelect]);
 
 
   /**
@@ -46,7 +72,7 @@ const PositionSelect = ({ spaceTree, showPositionSelect, onClose, title, selectT
       >
         {(!selectItem || v.id !== selectItem.id) && v.name}
         {selectItem && v.id === selectItem.id &&
-        <span className={styles.selectItem}>{v.name}</span>}
+        <span style={{ color: selectColor }}>{v.name}</span>}
       </Item>
     );
   };
@@ -141,7 +167,7 @@ const PositionSelect = ({ spaceTree, showPositionSelect, onClose, title, selectT
     setChoseList(tmp);
     setSelectList(selectList);
     setSelectItem(undefined);
-    if(selectList.length === 0){
+    if (selectList.length === 0) {
       onChange(tmp);
     }
   };
@@ -207,16 +233,19 @@ PositionSelect.propTypes = {
   onClose: PropTypes.func, // 关闭回调
   onChange: PropTypes.func.isRequired, // 数据变化后回调
   title: PropTypes.string, // title
-  selectTip: PropTypes.string,
-  defaultValue: PropTypes.array,
+  selectTip: PropTypes.string, // 提示
+  defaultValue: PropTypes.array, // 默认值
+  selectColor: PropTypes.string  // 选中颜色
 };
 
 PositionSelect.defaultProps = {
-  title: formatMessage({ id: 'sws.please.select' }),
-  selectTip: formatMessage({ id: 'sws.please.select' }),
+  title: '请选择',
+  selectTip: '请选择',
   onClose: () => {
   },
   defaultValue: [],
+  showPositionSelect: false,
+  selectColor: ' #fa8c16'
 };
 
 export default PositionSelect;

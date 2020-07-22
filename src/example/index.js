@@ -1,15 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Contacts from '../components/contacts';
-import { deptTree, userList } from '../mockData';
-
-const updateSelectUsers = userList => {
-  console.log(userList)
-};
-
-const users = [
-  { userId: 101,username:'admin1' }, { userId: 11,username: 'admin01' }
-];
+import PositionSelect from '../components/PositionSelect';
+import { spaceTree, initData } from '../mockData';
+import 'antd-mobile/dist/antd-mobile.css';
 
 ReactDOM.render(<div className="App"
                      style={{ 'padding': '10px', 'margin': '10px', height: '100%' }}>
@@ -19,12 +12,7 @@ ReactDOM.render(<div className="App"
   <p className="App-intro">
     To get started, edit <code>src/App.js</code> and save to reload.
   </p>
-  <div style={{ 'padding': '10px', 'margin': '10px', height: '100%' }}>
-    <Contacts deptTree={deptTree} users={userList} loading={false}
-              defaultUserSelected={users}
-              deptSearch={true} userSearch={true} deptCheckBox={true} searchUserPlaceholder={'HI'}
-              updateSelectUsers={updateSelectUsers} handleSearchUser={() => userList} updateSelectDept={updateSelectUsers}
-              defaultDeptSelected={[{id:1}]} radio={false}
-    />
+  <div style={{ height: '500px' }}>
+    <PositionSelect spaceTree={spaceTree}  onChange={e=>console.log(e)} showPositionSelect={true}/>
   </div>
 </div>, document.getElementById('root'));
