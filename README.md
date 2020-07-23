@@ -38,6 +38,7 @@ onChange | select finish handle | func | function(data){} ,data为选中节点�
 title | title | string | '请选择'
 selectTip | select tip | string | '请选择'
 selectColor   | select node color | string |  #fa8c16 
+selectFilter   | Control optional content, if it returns true, it will not be displayed | func |  function(v){} 
 
 
 ### Space Data

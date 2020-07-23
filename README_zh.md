@@ -36,6 +36,7 @@ onChange | 选择完成后回调 | func | function(data){} ,data为选中节点�
 title | 弹出框title | string | '请选择'
 selectTip | 选择 | string | '请选择'
 selectColor   | 选择的节点颜色 | string |  #fa8c16 
+selectFilter   | 控制可选内容，如果返回true，则不显示 | func |  function(v){} 
 
 
 ### 空间数据

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PositionSelect from '../components/PositionSelect';
-import { spaceTree, initData } from '../mockData';
+import { spaceTree, spactTree2 } from '../mockData';
 import 'antd-mobile/dist/antd-mobile.css';
 
 ReactDOM.render(<div className="App"
@@ -13,6 +13,6 @@ ReactDOM.render(<div className="App"
     To get started, edit <code>src/App.js</code> and save to reload.
   </p>
   <div style={{ height: '500px' }}>
-    <PositionSelect spaceTree={spaceTree}  onChange={e=>console.log(e)} showPositionSelect={true}/>
+    <PositionSelect spaceTree={spactTree2}  onChange={e=>console.log(e)} showPositionSelect={true}/>
   </div>
 </div>, document.getElementById('root'));

@@ -11,7 +11,10 @@ export const ADDRESS_DISABLED = '#9F9F9F'; // 位置置灰
 
 const { Item } = List;
 
-const PositionSelect = ({ spaceTree, showPositionSelect, onClose, title, selectTip, onChange, defaultValue, selectColor }) => {
+const PositionSelect = ({
+                          spaceTree, showPositionSelect, onClose, title, selectTip, onChange,
+                          defaultValue, selectColor, selectFilter
+                        }) => {
 
   const [choseList, setChoseList] = useState([]);
   const [selectList, setSelectList] = useState(undefined);
@@ -22,16 +25,16 @@ const PositionSelect = ({ spaceTree, showPositionSelect, onClose, title, selectT
    *  处理初始化数据
    */
   useEffect(() => {
-    if(spaceTree.length===0){
+    if (spaceTree.length === 0) {
       return;
     }
     let data = spaceTree;
     for (let i = 0; i < defaultValue.length; i++) {
       const tmp = defaultValue[i];
       const parent = data.find(v => v.id === tmp.parentId);
-      if(!parent && tmp.parentId===0){
+      if (!parent && tmp.parentId === 0) {
         childrenMap[tmp.parentId] = data;
-      }else {
+      } else {
         childrenMap[tmp.parentId] = parent.children;
         data = parent.children;
       }
@@ -42,14 +45,14 @@ const PositionSelect = ({ spaceTree, showPositionSelect, onClose, title, selectT
     }
     setChildrenMap(childrenMap);
     setChoseList(defaultValue);
-  }, [defaultValue,spaceTree]);
+  }, [defaultValue, spaceTree]);
 
   /**
    *  处理初始化数据
    */
   useEffect(() => {
-    if(!showPositionSelect) {
-      setChoseList([]) ;
+    if (!showPositionSelect) {
+      setChoseList([]);
       setSelectList(undefined);
       setChildrenMap({});
       setSelectItem(undefined);
@@ -186,9 +189,10 @@ const PositionSelect = ({ spaceTree, showPositionSelect, onClose, title, selectT
       <div className={styles.addressChildren}>
         <List>
           {list.map(v => {
-            const disabled =
-              (v.children.length === 0 && Number(v.structure) !== 2) ||
-              (Number(v.structure) === 2 && !v.mapId);
+            let disabled = false;
+            if (selectFilter) {
+              disabled = selectFilter(v);
+            }
             return disabled ? (
               ''
             ) : (
@@ -235,7 +239,8 @@ PositionSelect.propTypes = {
   title: PropTypes.string, // title
   selectTip: PropTypes.string, // 提示
   defaultValue: PropTypes.array, // 默认值
-  selectColor: PropTypes.string  // 选中颜色
+  selectColor: PropTypes.string,  // 选中颜色
+  selectFilter: PropTypes.func // 选择列表过滤
 };
 
 PositionSelect.defaultProps = {
@@ -245,7 +250,7 @@ PositionSelect.defaultProps = {
   },
   defaultValue: [],
   showPositionSelect: false,
-  selectColor: ' #fa8c16'
+  selectColor: ' #fa8c16',
 };
 
 export default PositionSelect;
