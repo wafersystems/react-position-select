@@ -160,7 +160,7 @@ export const spaceTree = [{
   'isAuthFlag': true
 }]
 
-export const spactTree2 = [{
+export const spaceTree2 = [{
   'children': [{
     'children': [{
       'children': [{
@@ -267,8 +267,31 @@ export const spactTree2 = [{
   'timeZone': ''
 }]
 
+export const space3 = [{
+  'id': 1,
+  'name': '会议开发组',
+  'parentId': 0,
+  'children': [{ 'id': 2, 'name': '测试区域一', 'parentId': 1, 'children': [] }, {
+    'id': 3,
+    'name': '测试区域二',
+    'parentId': 1,
+    'children': []
+  }, { 'id': 19, 'name': '时区', 'parentId': 1, 'children': [] }, {
+    'id': 47,
+    'name': 'WebEx测试区域',
+    'parentId': 1,
+    'children': []
+  }]
+}]
+
 
 export const initData = [
   { id: 3, parentId: 1 },
   { id: 4, parentId: 3 }
 ]
+
+export const init2 = [{
+  'id': 1,
+  'name': '会议开发组',
+  'parentId': 0,
+}]

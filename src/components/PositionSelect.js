@@ -29,22 +29,27 @@ const PositionSelect = ({
       return;
     }
     let data = spaceTree;
-    for (let i = 0; i < defaultValue.length; i++) {
-      const tmp = defaultValue[i];
-      const parent = data.find(v => v.id === tmp.parentId);
-      if (!parent && tmp.parentId === 0) {
-        childrenMap[tmp.parentId] = data;
-      } else {
-        childrenMap[tmp.parentId] = parent.children;
-        data = parent.children;
+    try{
+      for (let i = 0; i < defaultValue.length; i++) {
+        const tmp = defaultValue[i];
+        const parent = data.find(v => v.id === tmp.parentId);
+        if (!parent && tmp.parentId === 0) {
+          childrenMap[tmp.parentId] = data;
+        } else {
+          childrenMap[tmp.parentId] = parent.children;
+          data = parent.children;
+        }
+        if (i === (defaultValue.length - 1)) {
+          setSelectItem(tmp);
+          setSelectList(parent.children);
+        }
       }
-      if (i === (defaultValue.length - 1)) {
-        setSelectItem(tmp);
-        setSelectList(parent.children);
-      }
+      setChildrenMap(childrenMap);
+      setChoseList(defaultValue);
+    }catch (e){
+      console.error(`PositionSelect defaultValue error.`)
     }
-    setChildrenMap(childrenMap);
-    setChoseList(defaultValue);
+
   }, [defaultValue, spaceTree]);
 
   /**
