@@ -1,16 +1,16 @@
 {
-  "name": "react-position-select-smt",
+  "name": "react-position-select",
   "version": "0.1.0",
   "private": false,
-  "author": "dengqi",
-  "email": "hellodeqi@qq.com",
+  "author": "vincent",
+  "email": "alfa.king+ai@gmail.com",
   "license": "MIT",
   "main": "index.js",
   "module": "index.es.js",
   "jsnext:main": "index.es.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hellodeqi/react-position-select.git"
+    "url": "git+https://github.com/wafersystems/react-position-select.git"
   },
   "files": [
     "dist"
