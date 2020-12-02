@@ -20,7 +20,7 @@ position select
 ### React 
 
 ```js
-import PositionSelect from 'react-position-select';
+import {PositionSelect, PosModel} from 'react-position-select';
 
 <PositionSelect {...props}/>
 
