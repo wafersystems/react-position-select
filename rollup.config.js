@@ -13,7 +13,7 @@ process.env.NODE_ENV = 'production';
 const externalIds = ['antd-mobile','lodash', 'prop-types', 'react', 'react-dom'];
 
 export default {
-  input: 'src/components/PositionSelect.js',
+  input: 'src/components/PosModel.js',
   output: [
     {
       file: 'dist/index.js',

@@ -1,0 +1,78 @@
+.modalDiv {
+  height: 30rem;
+  background: #efeff4;
+  .itemDiv {
+    display: flex;
+    justify-content: flex-start;
+    .dotDiv {
+      width: 40px;
+      height: 44px;
+      background-color: #fff;
+      .lineUp {
+        width: 1px;
+        height: 18px;
+        position: relative;
+        left: 19px;
+        top: 1px;
+      }
+      .dot {
+        position: relative;
+        top: 0;
+        left: 16px;
+        width: 8px;
+        height: 8px;
+        border-radius: 5px;
+        background-color: #1b84ff;
+        border: 1px solid #1b84ff;
+      }
+      .lineDown {
+        width: 1px;
+        height: 17px;
+        position: relative;
+        left: 19px;
+        top: 0;
+      }
+    }
+    :global {
+      .am-list-item {
+        width: calc(100% - 40px);
+        padding-left: 0;
+        .am-list-line {
+          .am-list-content {
+            font-size: 0.9rem;
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+  .addressChildren {
+    :global {
+      .am-list {
+        border-bottom: none;
+        background-color: #efeff4;
+        .am-list-body {
+          border-bottom: none;
+          background-color: #efeff4;
+
+          .am-list-item {
+            border-bottom: none;
+            background-color: #efeff4;
+            .am-list-line {
+              .am-list-content {
+                font-size: 0.9rem;
+                color: #333;
+              }
+            }
+          }
+        }
+        .am-list-body::after {
+          height: 0;
+        }
+      }
+    }
+  }
+}
+.selectItem{
+  color: #fa8c16;
+}
