@@ -47,7 +47,7 @@ const Position = ({
             setChildrenMap(childrenMap);
             setChoseList(defaultValue);
         }catch (e){
-            console.error(`PositionSelect defaultValue error.`)
+            console.error(`PositionSelect defaultValue error.`);
         }
 
     }, [defaultValue, spaceTree]);

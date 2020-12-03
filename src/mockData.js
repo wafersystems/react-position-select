@@ -160,129 +160,9 @@ export const spaceTree = [{
   'isAuthFlag': true
 }]
 
-export const spaceTree2 = [{
-  'children': [{
-    'children': [{
-      'children': [{
-        'children': [],
-        'delFlag': '0',
-        'holidayCode': '',
-        'id': 4,
-        'location': '',
-        'name': '3楼',
-        'nameEn': '',
-        'parentId': 3,
-        'parentName': '零壹广场',
-        'path': '-1-2-3-4-',
-        'pathName': '会议开发,西安,零壹广场,3楼',
-        'sort': 0,
-        'structure': 2,
-        'timeZone': ''
-      }],
-      'delFlag': '0',
-      'holidayCode': '',
-      'id': 3,
-      'location': '',
-      'name': '零壹广场',
-      'nameEn': '',
-      'parentId': 2,
-      'parentName': '西安',
-      'path': '-1-2-3-',
-      'pathName': '会议开发,西安,零壹广场',
-      'sort': 0,
-      'structure': 1,
-      'timeZone': ''
-    }],
-    'delFlag': '0',
-    'holidayCode': '',
-    'id': 2,
-    'location': '',
-    'name': '西安',
-    'nameEn': '',
-    'parentId': 1,
-    'parentName': '会议开发',
-    'path': '-1-2-',
-    'pathName': '会议开发,西安',
-    'sort': 0,
-    'structure': 1,
-    'timeZone': ''
-  }, {
-    'children': [{
-      'children': [],
-      'delFlag': '0',
-      'holidayCode': '1',
-      'id': 6,
-      'location': '',
-      'name': 'Zoom会议室',
-      'nameEn': '',
-      'parentId': 5,
-      'parentName': '在线会议室',
-      'path': '-1-5-6-',
-      'pathName': '会议开发,在线会议室,Zoom会议室',
-      'sort': 0,
-      'structure': 2,
-      'timeZone': ''
-    }],
-    'delFlag': '0',
-    'holidayCode': '1',
-    'id': 5,
-    'location': '',
-    'name': '在线会议室',
-    'nameEn': '',
-    'parentId': 1,
-    'parentName': '会议开发',
-    'path': '-1-5-',
-    'pathName': '会议开发,在线会议室',
-    'sort': 0,
-    'structure': 1,
-    'timeZone': ''
-  }, {
-    'children': [],
-    'delFlag': '0',
-    'holidayCode': '',
-    'id': 16,
-    'location': '',
-    'name': '时区测试区域',
-    'nameEn': '',
-    'parentId': 1,
-    'parentName': '会议开发',
-    'path': '-1-16-',
-    'pathName': '会议开发,时区测试区域',
-    'sort': 0,
-    'structure': 2,
-    'timeZone': 'AsiaShanghai'
-  }],
-  'delFlag': '0',
-  'holidayCode': '',
-  'id': 1,
-  'location': '',
-  'name': '会议开发',
-  'nameEn': '',
-  'parentId': 0,
-  'parentName': '',
-  'path': ' - 1 - ',
-  'pathName': '会议开发',
-  'sort': 0,
-  'structure': 0,
-  'timeZone': ''
-}]
+export const spaceTree2 = [{"id":7,"name":"区域","parentId":0,"children":[{"id":8,"name":"会议室区域","parentId":7,"children":[]}]}]
 
-export const space3 = [{
-  'id': 1,
-  'name': '会议开发组',
-  'parentId': 0,
-  'children': [{ 'id': 2, 'name': '测试区域一', 'parentId': 1, 'children': [] }, {
-    'id': 3,
-    'name': '测试区域二',
-    'parentId': 1,
-    'children': []
-  }, { 'id': 19, 'name': '时区', 'parentId': 1, 'children': [] }, {
-    'id': 47,
-    'name': 'WebEx测试区域',
-    'parentId': 1,
-    'children': []
-  }]
-}]
+export const space3 = [{"id":1,"name":"meetingdev","parentId":0,"children":[{"id":2,"name":"会议室区域","parentId":1,"children":[]},{"id":3,"name":"零一广场","parentId":1,"children":[]},{"id":4,"name":"弄撒","parentId":1,"children":[]},{"id":5,"name":"雁塔区","parentId":1,"children":[]},{"id":6,"name":"莲湖区","parentId":1,"children":[]}]}]
 
 
 export const initData = [
@@ -290,8 +170,4 @@ export const initData = [
   { id: 4, parentId: 3 }
 ]
 
-export const init2 = [{
-  'id': 1,
-  'name': '会议开发组',
-  'parentId': 0,
-}]
+export const init2 = [{"children":[{"children":[],"delFlag":"0","holidayCode":"1","id":2,"location":"","name":"会议室区域","nameEn":"","parentId":1,"parentName":"meetingdev","path":"-1-2-","pathName":"meetingdev,会议室区域","sort":2,"structure":2,"timeZone":"Asia/Shanghai"},{"children":[],"delFlag":"0","holidayCode":"1","id":3,"location":"","name":"零一广场","nameEn":"","parentId":1,"parentName":"meetingdev","path":"-1-3-","pathName":"meetingdev,零一广场","sort":3,"structure":2,"timeZone":"Asia/Shanghai"},{"children":[],"delFlag":"0","holidayCode":"1","id":4,"location":"","name":"弄撒","nameEn":"","parentId":1,"parentName":"meetingdev","path":"-1-4-","pathName":"meetingdev,弄撒","sort":4,"structure":2,"timeZone":""},{"children":[],"delFlag":"0","holidayCode":"1","id":5,"location":"","name":"雁塔区","nameEn":"","parentId":1,"parentName":"meetingdev","path":"-1-5-","pathName":"meetingdev,雁塔区","sort":5,"structure":2,"timeZone":""},{"children":[],"delFlag":"0","holidayCode":"1","id":6,"location":"","name":"莲湖区","nameEn":"","parentId":1,"parentName":"meetingdev","path":"-1-6-","pathName":"meetingdev,莲湖区","sort":6,"structure":2,"timeZone":""}],"delFlag":"0","holidayCode":"1","id":1,"location":"","name":"meetingdev","nameEn":"","parentId":0,"parentName":"","path":"-1-","pathName":"meetingdev","sort":0,"structure":1,"timeZone":""},{"children":[],"delFlag":"0","holidayCode":"1","id":2,"location":"","name":"会议室区域","nameEn":"","parentId":1,"parentName":"meetingdev","path":"-1-2-","pathName":"meetingdev,会议室区域","sort":2,"structure":2,"timeZone":"Asia/Shanghai"}]

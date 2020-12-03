@@ -16,7 +16,7 @@ ReactDOM.render(<div className="App"
     To get started, edit <code>src/App.js</code> and save to reload.
   </p>
   <div style={{ height: '500px' }}>
-    <PositionSelect spaceTree={space3} defaultValue={init2}  onChange={e=>console.log(e)} showPositionSelect={true}/>
-    {/*<PosModel spaceTree={space3} spaceTree1={spaceTree2} defaultValue={init2}  onChange={e=>console.log(e)} showPositionSelect={true}/>*/}
+    {/*<PositionSelect spaceTree={space3} defaultValue={init2}  onChange={e=>console.log(e)} showPositionSelect={true}/>*/}
+    <PosModel spaceTree={space3} spaceTree1={spaceTree2} defaultValue={init2} defaultValue1={[]}  onChange={e=>console.log(e)} onChange1={e => console.info('onChanage1', e)} showPositionSelect={true}/>
   </div>
 </div>, document.getElementById('root'));
