@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PositionSelect from '../components/PositionSelect';
 import PosModel from '../components/PosModel';
+// import {PositionSelect,PosModel} from "../tmp/index";
+
 import { spaceTree, spaceTree2, space3, initData,init2 } from '../mockData';
 import 'antd-mobile/dist/antd-mobile.css';
 
