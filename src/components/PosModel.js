@@ -14,10 +14,12 @@ class PosModel extends PureComponent {
             spaceTree1,
             selectTip,
             defaultValue,
+            defaultValue1,
             selectColor,
             selectFilter,
             tabs,
-            onChange
+            onChange,
+            onChange1
         } = this.props;
         return (
             <Modal
@@ -34,7 +36,7 @@ class PosModel extends PureComponent {
                         tabs={tabs}
                     >
                         <Position spaceTree={spaceTree} selectTip={selectTip} defaultValue={defaultValue} selectColor={selectColor} selectFilter={selectFilter} onChange={onChange}/>
-                        <Position spaceTree={spaceTree1} selectTip={selectTip} defaultValue={defaultValue} selectColor={selectColor} selectFilter={selectFilter} onChange={onChange} />
+                        <Position spaceTree={spaceTree1} selectTip={selectTip} defaultValue={defaultValue1} selectColor={selectColor} selectFilter={selectFilter} onChange={onChange1} />
                     </Tabs>
                 ) : <Position spaceTree={spaceTree} selectTip={selectTip} defaultValue={defaultValue} selectColor={selectColor} selectFilter={selectFilter} onChange={onChange}/>}
 
@@ -49,9 +51,11 @@ PosModel.propTypes = {
     showPositionSelect: PropTypes.bool.isRequired, // 是否显示
     onClose: PropTypes.func, // 关闭回调
     onChange: PropTypes.func.isRequired, // 数据变化后回调
+    onChange1: PropTypes.func.isRequired, // 数据变化后回调
     title: PropTypes.string, // title
     selectTip: PropTypes.string, // 提示
     defaultValue: PropTypes.array, // 默认值
+    defaultValue1: PropTypes.array, // 默认值1
     selectColor: PropTypes.string,  // 选中颜色
     selectFilter: PropTypes.func // 选择列表过滤
 };
