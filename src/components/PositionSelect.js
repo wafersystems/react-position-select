@@ -115,7 +115,7 @@ const PositionSelect = ({
                       className={styles.lineUp}
                       style={index !== 0 ? { backgroundColor: primaryColor } : {}}
                     />
-                    <div className={styles.dot} style={{backgroundColor: primaryColor,border: '1px solid '+primaryColor}} />
+                    <div className={styles.dot} style={{backgroundColor: primaryColor,border: `1px solid ${primaryColor}`}} />
                     <div className={styles.lineDown} style={{ backgroundColor: primaryColor }} />
                   </div>
                   {makeItem(v)}
@@ -137,7 +137,7 @@ const PositionSelect = ({
                   className={styles.lineUp}
                   style={index !== 0 ? { backgroundColor: primaryColor } : {}}
                 />
-                <div className={styles.dot} style={{backgroundColor: primaryColor,border: '1px solid '+primaryColor}} />
+                <div className={styles.dot} style={{backgroundColor: primaryColor,border: `1px solid ${primaryColor}`}} />
                 <div
                   className={styles.lineDown}
                   style={!_.isEmpty(v.children) ? { backgroundColor: primaryColor } : {}}

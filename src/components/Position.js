@@ -5,7 +5,7 @@ import { List, Icon } from 'antd-mobile';
 import styles from './Position.less';
 
 // 位置选择组件颜色
-export const ADDRESS_CHOSE = '#1B84FF'; // 位置选择
+// export const ADDRESS_CHOSE = '#1B84FF'; // 位置选择
 export const ADDRESS_FREE = '#fff'; // 位置未选择
 export const ADDRESS_DISABLED = '#9F9F9F'; // 位置置灰
 
@@ -13,7 +13,7 @@ const { Item } = List;
 
 const Position = ({
                       spaceTree, showPositionSelect, selectTip, onChange,
-                      defaultValue, selectColor, selectFilter
+                      defaultValue, selectColor, selectFilter, primaryColor
                   }) => {
 
     const [choseList, setChoseList] = useState([]);
@@ -113,16 +113,16 @@ const Position = ({
                                     <div className={styles.dotDiv}>
                                         <div
                                             className={styles.lineUp}
-                                            style={index !== 0 ? { backgroundColor: ADDRESS_CHOSE } : {}}
+                                            style={index !== 0 ? { backgroundColor: primaryColor } : {}}
                                         />
-                                        <div className={styles.dot} />
-                                        <div className={styles.lineDown} style={{ backgroundColor: ADDRESS_CHOSE }} />
+                                        <div className={styles.dot} style={{backgroundColor: primaryColor,border: `1px solid ${primaryColor}`}} />
+                                        <div className={styles.lineDown} style={{ backgroundColor: primaryColor }} />
                                     </div>
                                     {makeItem(v)}
                                 </div>
                                 <div className={styles.itemDiv}>
                                     <div className={styles.dotDiv}>
-                                        <div className={styles.lineUp} style={{ backgroundColor: ADDRESS_CHOSE }} />
+                                        <div className={styles.lineUp} style={{ backgroundColor: primaryColor }} />
                                         <div className={styles.dot} style={{ backgroundColor: ADDRESS_FREE }} />
                                     </div>
                                     <Item key="lastDot">{selectTip}</Item>
@@ -135,12 +135,12 @@ const Position = ({
                             <div className={styles.dotDiv}>
                                 <div
                                     className={styles.lineUp}
-                                    style={index !== 0 ? { backgroundColor: ADDRESS_CHOSE } : {}}
+                                    style={index !== 0 ? { backgroundColor: primaryColor } : {}}
                                 />
-                                <div className={styles.dot} />
+                                <div className={styles.dot} style={{backgroundColor: primaryColor,border: `1px solid ${primaryColor}`}} />
                                 <div
                                     className={styles.lineDown}
-                                    style={!_.isEmpty(v.children) ? { backgroundColor: ADDRESS_CHOSE } : {}}
+                                    style={!_.isEmpty(v.children) ? { backgroundColor: primaryColor } : {}}
                                 />
                             </div>
                             {makeItem(v)}
@@ -235,7 +235,8 @@ Position.propTypes = {
     selectTip: PropTypes.string, // 提示
     defaultValue: PropTypes.array, // 默认值
     selectColor: PropTypes.string,  // 选中颜色
-    selectFilter: PropTypes.func // 选择列表过滤
+    selectFilter: PropTypes.func, // 选择列表过滤
+    primaryColor: PropTypes.string// 主色
 };
 
 Position.defaultProps = {
@@ -245,7 +246,8 @@ Position.defaultProps = {
     },
     defaultValue: [],
     showPositionSelect: false,
-    selectColor: ' #fa8c16',
+    selectColor: '#FA8C16',
+    primaryColor: '#1B84FF'
 };
 
 export default Position;
