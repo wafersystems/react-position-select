@@ -123,7 +123,7 @@ const Position = ({
                                 <div className={styles.itemDiv}>
                                     <div className={styles.dotDiv}>
                                         <div className={styles.lineUp} style={{ backgroundColor: primaryColor }} />
-                                        <div className={styles.dot} style={{ backgroundColor: ADDRESS_FREE }} />
+                                        <div className={styles.dot} style={{ backgroundColor: ADDRESS_FREE, border: `1px solid ${primaryColor}` }} />
                                     </div>
                                     <Item key="lastDot">{selectTip}</Item>
                                 </div>
@@ -151,7 +151,7 @@ const Position = ({
                     <div className={styles.itemDiv}>
                         <div className={styles.dotDiv}>
                             <div className={styles.lineUp} />
-                            <div className={styles.dot} style={{ backgroundColor: ADDRESS_FREE }} />
+                            <div className={styles.dot} style={{ backgroundColor: ADDRESS_FREE, border: `1px solid ${primaryColor}` }} />
                         </div>
                         <Item key="lastDot">{selectTip}</Item>
                     </div>)}
